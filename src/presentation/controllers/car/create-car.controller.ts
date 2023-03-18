@@ -6,13 +6,16 @@ class CreateCarController {
 
   handle(request: Request, response: Response): Response {
     const { brand, model } = request.body;
-
-    try {
-      const car = this.createCarUseCase.execute({ brand, model });
-      return response.status(201).json(car);
-    } catch (error) {
-      return response.status(400).json({ error: "Some error" });
-    }
+    
+    console.log(this.createCarUseCase);
+    
+    // try {
+    //   const car = this.createCarUseCase.execute({ brand, model });
+    //   return response.status(201).json(car);
+    // } catch (error) {
+    //   return response.status(400).json({ error });
+    // }
+    return response;
   }
 }
 

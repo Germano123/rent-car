@@ -8,7 +8,7 @@ type ICarProps = {
     // color: string;
     // mileage: string;
     // dailyPrice: string;
-    available: string;
+    available: boolean;
 };
 
 type ICarBody = {
@@ -20,11 +20,12 @@ type ICarBody = {
     // color: string;
     // mileage: string;
     // dailyPrice: string;
-    available: string;
+    available: boolean;
 };
 
 export class Car extends Entity<ICarProps> {
     private constructor(props: ICarProps, id?: string) {
+        props.available = false;
         super(props, id);
     }
 

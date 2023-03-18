@@ -1,4 +1,4 @@
-import { CarRepository } from '../../../../infra/database/entities/car/car.repository';
+import { CarRepository } from '../../../../infra/database/repository/car/car.repository';
 import { RentCarController } from '../../../../presentation/controllers/car/Rent-car.controller';
 import { RentCarUseCase } from './rent-car.usecase';
 

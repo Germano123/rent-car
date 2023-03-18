@@ -5,6 +5,7 @@ import { routes } from './src/presentation/routes/routes';
 
 const app = express();
 
+app.use(express.json());
 app.use('/', routes);
 
 const configService = new ConfigService();

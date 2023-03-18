@@ -2,15 +2,16 @@ import { CarDto } from '../../../../application/usecases/car/dto/CarDto';
 import { CreateCarDto } from '../../../../application/usecases/car/dto/CreateCarDto';
 import { UpdateCarDto } from '../../../../application/usecases/car/dto/UpdateCarDto';
 import { Car } from '../../../../domain/car/entities/car.entity';
-import { ICarRepository } from '../../../../domain/car/repositories/car.repository';
+import { CarMapper } from '../../../../domain/car/mappers/car.mapper';
+import { ICarRepository } from '../../../../domain/car/repositories/car-repository.interface';
 
 export class CarRepository implements ICarRepository {
-    private users: Car[];
+    private cars: Car[];
 
     private static INSTANCE: CarRepository;
 
     private constructor() {
-        this.users = [];
+        this.cars = [];
     }
 
     public static getInstance(): CarRepository {
@@ -30,8 +31,13 @@ export class CarRepository implements ICarRepository {
     }
     
     async create(car: CreateCarDto): Promise<CarDto> {
-        
-        throw new Error('Method not implemented.');
+        const entity = Car.create({ 
+            brand: car.brand,
+            model: car.model,
+            available: false,
+        });
+        this.cars.push(entity);
+        return CarMapper.toDto(entity);
     }
     
     async update(id: string, car: UpdateCarDto): Promise<CarDto> {

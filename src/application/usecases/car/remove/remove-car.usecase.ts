@@ -1,4 +1,4 @@
-import { ICarRepository } from '../../../../domain/car/repositories/car.repository';
+import { ICarRepository } from '../../../../domain/car/repositories/car-repository.interface';
 import { CarDto } from '../dto/CarDto';
 
 export class RemoveCarUseCase {

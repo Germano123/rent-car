@@ -13,5 +13,4 @@ export abstract class Entity<T> {
         this._id = id ?? uuidV4();
         this.props = props;
     }
-}            
-            
+}           

@@ -3,7 +3,7 @@ import { carRouter } from './car-routes';
 
 const routes = Router();
 
-routes.use('/', (req, res) => {
+routes.get('/', (req, res) => {
     res.send("Hello World!");
 });
 

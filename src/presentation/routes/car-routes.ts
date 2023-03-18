@@ -9,12 +9,7 @@ import { rentCarController } from '../../application/usecases/car/rentcar/index'
 
 const carRouter = Router();
 
-carRouter.post('/create-car', (req, res) => {
-    console.log("Wuz here");
-    // createCarController.handle
-    res.send("Been here");
-});
-
+carRouter.post('/create-car', createCarController.handle);
 carRouter.get('/get-car/:id', getCarController.handle);
 carRouter.get('/get-all-cars', getAllCarsController.handle);
 carRouter.patch('/update-car/:id', updateCarController.handle);
